@@ -1,6 +1,6 @@
 #!/bin/bash
 
-a=$(cat ./exp/tri4/decode_train_dev/wer_* | ./utils/best_wer.sh | cut -d' ' -f 1-2)
+a=$(cat ./exp/tri4/decode_train_dev/wer_* | grep WER | ./utils/best_wer.sh | cut -d' ' -f 1-2)
 
 b=$(grep "$a" -r  ./exp/tri4/decode_train_dev/ | sort | head -1 )
 
